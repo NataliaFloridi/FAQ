@@ -4,18 +4,26 @@ $color-3:#CCCCCC;
 $color-4:#222;
 $font-1: 'Nunito', sans-serif;
 
+@function em($pixel, $contexto: 16) {
+    @return $pixel / $contexto + em;
+}
 
-// h1
-// fontsize:32px;
-// lineheigh:43,65px
-// font weigh: 600
+@mixin type-1($size) {
+    font-family: $font-1;
 
-// corpo:
-// 20px
-// lh:24px
-// weight:400
-
-// footer
-// 16px
-// lh:24px
-// weigh:400
+    @if $size == 16 {
+        font-size: em(16);
+        font-weight: 400;
+        line-height: em(24, 16);
+    }
+    @else if $size == 20{
+        font-size: em(20);
+        font-weight: 400;
+        line-height: em(24, 20);
+    }
+    @else if $size == 32 {
+        font-size: em(32);
+        font-weight: 600;
+        line-height: em(43.65, 32);
+    }
+}
