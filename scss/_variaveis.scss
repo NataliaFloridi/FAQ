@@ -2,6 +2,7 @@ $color-1:#E5E5E5;
 $color-2:#4C8CF5;
 $color-3:#CCCCCC;
 $color-4:#222;
+$color-5: #fff;
 $font-1: 'Nunito', sans-serif;
 
 @function em($pixel, $contexto: 16) {
@@ -26,4 +27,10 @@ $font-1: 'Nunito', sans-serif;
         font-weight: 600;
         line-height: em(43.65, 32);
     }
+}
+
+@mixin size {
+    background-color: $color-5 ;
+    height: 48px;
+    width: 680px;
 }
